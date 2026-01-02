@@ -22,7 +22,10 @@ jobs:
         branch: 'main'
         owner: 'RedstoneWizard08'
         repository: 'IcarusModMerger'
-     
+    - name: Access cloned repository content
+      run: |
+        cd IcarusModMerger
+        ls -la
     - uses: actions/checkout@v4
     - name: Build
       run: cargo build --verbose
