@@ -28,10 +28,9 @@ jobs:
         ls -la
         cargo build --verbose
         cargo test --verbose
-
-    - uses: actions/checkout@v5
-    - name: Download release artifact
-      uses: actions/download-artifact@v5
+        cargo build -r
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
       with:
-        name: IcarusModMerger
-        path: ./IcarusModMerger
+        name: rust-artifact
+        path: target/release/icarus-mod-merger
