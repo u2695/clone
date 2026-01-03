@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: rust-artifact
-        path: ./target/release/icarus-mod-merger
+        path: target/release/icarus-mod-merger
