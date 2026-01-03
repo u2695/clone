@@ -26,7 +26,8 @@ jobs:
       run: |
         cd IcarusModMerger
         ls -la
-        cargo build -r --verbose --bins
+        #cargo build -r --verbose --bins
+        RUSTFLAGS='-C target-feature=+crt-static' cargo build --release --target x86_64-linux-gnu --bins
         cp ./target/release/icarus-mod-merger ~/
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
