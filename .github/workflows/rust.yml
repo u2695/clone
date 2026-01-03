@@ -26,11 +26,11 @@ jobs:
       run: |
         cd IcarusModMerger
         ls -la
-        cargo build --verbose
+        cargo build -r --verbose
         cargo test --verbose
-        cargo build -r
+        find .
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: rust-artifact
-        path: target/debug/icarus-mod-merger
+        path: ./target/release/icarus-mod-merger
