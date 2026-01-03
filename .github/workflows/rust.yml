@@ -27,9 +27,9 @@ jobs:
         cd IcarusModMerger
         ls -la
         cargo build -r --verbose --bins
-        find .
+        cp ./target/release/icarus-mod-merger ~/
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: rust-artifact
-        path: target/release/icarus-mod-merger
+        path: ~/icarus-mod-merger
